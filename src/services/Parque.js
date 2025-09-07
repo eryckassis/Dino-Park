@@ -33,5 +33,21 @@ class Parque {
     if (!dino) throw new Error("O Dinossauro não pode ser encontrado!");
     if (!recintoDestino)
       throw new Error("O Recinto destino não foi encontrado!");
+    if (!dino.recinto) {
+      dino.recinto.removerDinossauro(nomeDinossauro);
+    }
+    recintoDestino.adicionarDinossauro(dino);
+  }
+
+  listarDinossaurosDoRecinto(idRecinto) {
+    const recinto = this.recintos.find((r) => r.id === idRecinto);
+    if (!recinto) throw new Error("O recinto não foi encontrado !");
+    return recinto.listarDinossauros();
+  }
+
+  listarTodosDinossauros() {
+    return this.dinossauros.map((d) => d.descricaoDinossauro());
   }
 }
+
+module.exports = Parque;
