@@ -27,5 +27,11 @@ class Parque {
     recinto.adicionarDinossauros(dino);
   }
 
-  transferirDinossauro(nomeDinossauro, idRecintoDestino) {}
+  transferirDinossauro(nomeDinossauro, idRecintoDestino) {
+    const dino = this.dinossauros.find((d) => d.nome === nomeDinossauro);
+    const recintoDestino = this.recintos.find((r) => r.id === idRecintoDestino);
+    if (!dino) throw new Error("O Dinossauro não pode ser encontrado!");
+    if (!recintoDestino)
+      throw new Error("O Recinto destino não foi encontrado!");
+  }
 }
