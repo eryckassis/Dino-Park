@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 async function connectMongo() {
   try {
-    await mongoose.connect("mongod://localhost:27017/dino-park", {
+    await mongoose.connect("mongodb://localhost:27017/dino-park", {
       useNewUrlParser: true,
-      useUnifiedTipology: true,
+      useUnifiedTopology: true,
     });
     console.log("MongoDB foi conetado ao projeto com sucesso !!");
   } catch (error) {
