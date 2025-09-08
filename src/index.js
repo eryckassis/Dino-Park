@@ -1,4 +1,4 @@
-const Parque = require("./services/Parque");
+const Parque = require("./services/Parque.js");
 const parque = new Parque();
 
 //Criação dos Recintos.
@@ -11,3 +11,11 @@ const recinto3 = parque.criarRecinto(3, "Herbivoro", "Casa Blanca", 3);
 
 const dino1 = parque.criarDinossauro("Rex", "Tyranossaurus", 5);
 const dino2 = parque.criarDinossauro("Blue", "Velociraptor", 3);
+
+//Inserir dinossauro nos recintos.
+
+parque.inserirDinossauroNoRecinto("Rex", 2);
+parque.inserirDinossauroNoRecinto("Blue", 2);
+
+//Listar dinossauro do recinto 2.
+console.log("Dinossauros no recinto 2:", parque.listarDinossaurosDoRecinto(2));
