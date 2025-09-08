@@ -24,7 +24,7 @@ class Parque {
     if (!dino) throw new Error("Dinossauro não pode ser encontrado!");
     if (!recinto) throw new Error("O Recinto não pode ser encontrado!");
 
-    recinto.adicionarDinossauros(dino);
+    recinto.adicionarDinossauro(dino);
   }
 
   transferirDinossauro(nomeDinossauro, idRecintoDestino) {
