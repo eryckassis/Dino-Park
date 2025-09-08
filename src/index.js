@@ -19,3 +19,10 @@ parque.inserirDinossauroNoRecinto("Blue", 2);
 
 //Listar dinossauro do recinto 2.
 console.log("Dinossauros no recinto 2:", parque.listarDinossaurosDoRecinto(2));
+parque.transferirDinossauro("Blue", 1);
+console.log("Dinossauros no recinto 1:", parque.listarDinossaurosDoRecinto(1));
+console.log("Dinossauros no recinto 2:", parque.listarDinossaurosDoRecinto(2));
+console.log(
+  "Todos os Dinossauros do parque :",
+  parque.listarDinossaurosDoRecinto()
+);
