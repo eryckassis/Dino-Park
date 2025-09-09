@@ -1,7 +1,9 @@
 const connectMongo = require("./controllers/mongo");
+const repoRecinto = new RecintoRepository();
 const DinossauroRepository = require("./respositories/DinossauroRepository.js");
 const DinossauroModel = require("./models/Dinossauro.js");
 const Parque = require("./services/Parque.js");
+const RecintoRepository = require("./respositories/RecintoRepository.js");
 const parque = new Parque();
 
 (async () => {
@@ -11,6 +13,16 @@ const parque = new Parque();
   await repo.add({ nome: "Rex", especie: "Tyranossaurus", idade: 5 });
   await repo.add({ nome: "Blue", especie: "Velociraptor", idade: 2 });
   await repo.add({ nome: "Baiano", especie: "Baianossauro", idade: 10 });
+  await repoRecinto.add({
+    nome: "Val verde",
+    tipo: "Carnivoro",
+    capacidade: 2,
+  });
+  await repoRecinto.add({
+    nome: "Selva Negra",
+    tipo: "Herbivoro",
+    capacidade: 2,
+  });
   const todos = await repo.list();
   console.log(
     "Dinossauros cadastrados:",
