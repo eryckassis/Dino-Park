@@ -4,7 +4,6 @@ const DinossauroRepository = require("./respositories/DinossauroRepository.js");
 const DinossauroModel = require("./models/Dinossauro.js");
 const Parque = require("./services/Parque.js");
 const RecintoRepository = require("./respositories/RecintoRepository.js");
-const parque = new Parque();
 
 (async () => {
   await connectMongo();
@@ -42,6 +41,7 @@ const novoDino = new DinossauroModel({
 novoDino.save().then(() => console.log("Dinossauro salvo no banco de dados"));
 
 // const dino1 = parque.criarDinossauro("Rex", "Tyranossaurus", 5);
+// const parque = new Parque();
 // const dino2 = parque.criarDinossauro("Blue", "Velociraptor", 3);
 // const dino3 = parque.criarDinossauro("Baiano", "Baianosauro", 10);
 //Criação dos Recintos.
