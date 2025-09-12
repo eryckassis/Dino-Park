@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const DinossauroSchema = new mongoose.Schema({
   nome: { type: String, required: true, trim: true },
@@ -11,4 +11,4 @@ const DinossauroSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Dinossauro", DinossauroSchema);
+export default mongoose.model("Dinossauro", DinossauroSchema);

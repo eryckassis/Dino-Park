@@ -1,4 +1,4 @@
-const Dinossauro = require("../models/Dinossauro");
+import Dinossauro from "../models/Dinossauro.js";
 
 class DinossauroRepository {
   async add(dinoData) {
@@ -21,4 +21,4 @@ class DinossauroRepository {
     await Dinossauro.deleteOne({ nome });
   }
 }
-module.exports = DinossauroRepository;
+export default DinossauroRepository;

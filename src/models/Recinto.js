@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const RecintoSchema = new mongoose.Schema({
   tipo: { type: String, required: true, trim: true },
@@ -6,5 +6,4 @@ const RecintoSchema = new mongoose.Schema({
   capacidade: { type: Number, required: true, min: 1 },
 });
 
-module;
-exports = mongoose.model("Recinto", RecintoSchema);
+export default mongoose.model("Recinto", RecintoSchema);

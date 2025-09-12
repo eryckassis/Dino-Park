@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-async function connectMongo() {
+export default async function connectMongo() {
   try {
     await mongoose.connect("mongodb://localhost:27017/dino-park", {
       useNewUrlParser: true,
@@ -12,4 +12,3 @@ async function connectMongo() {
     process.exit(1); // aqui, ecerramos o app se não conectar
   }
 }
-module.exports = connectMongo;

@@ -1,4 +1,4 @@
-const RecintoModel = require("../models/Recinto");
+import RecintoModel from "../models/Recinto.js";
 
 class RecintoRepository {
   async add(data) {
@@ -9,4 +9,4 @@ class RecintoRepository {
     return await RecintoModel.find();
   }
 }
-module.exports = RecintoRepository;
+export default RecintoRepository;

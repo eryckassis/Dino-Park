@@ -1,5 +1,7 @@
 {
+  "type": "module",
   "dependencies": {
+    "express": "^5.1.0",
     "fs-extra": "^11.3.0",
     "mongoose": "^8.18.1"
   }
