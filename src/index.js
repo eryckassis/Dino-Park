@@ -4,7 +4,6 @@ import dinossauroRoutes from "./routes/dinossauro.js";
 import RecintoModel from "./models/Recinto.js";
 const repoRecinto = new RecintoRepository();
 import DinossauroRepository from "./respositories/DinossauroRepository.js";
-import DinossauroModel from "./models/Dinossauro.js";
 import RecintoRepository from "./respositories/RecintoRepository.js";
 
 const app = express();
