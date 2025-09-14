@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 export default async function connectMongo() {
   try {
     await mongoose.connect("mongodb://localhost:27017/dino-park", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      dbName: "dino-park",
+      autoIndex: true,
     });
     console.log("MongoDB foi conetado ao projeto com sucesso !!");
   } catch (error) {

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const DinossauroSchema = new mongoose.Schema({
-  nome: { type: String, required: true, trim: true },
+  nome: { type: String, required: true, trim: true, unique: true },
   especie: { type: String, required: true, trim: true },
   idade: { type: Number, default: 0, min: 0 },
   recintoId: {

@@ -12,16 +12,28 @@ app.use("/dinossauros", dinossauroRoutes);
 
 (async () => {
   await connectMongo();
+  const repo = new DinossauroRepository();
+  await seedDinossauros();
 
   const PORT = process.env.port || 3000;
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
   });
 
-  const repo = new DinossauroRepository();
-  await repo.add({ nome: "Rex", especie: "Tyranossaurus", idade: 5 });
-  await repo.add({ nome: "Blue", especie: "Velociraptor", idade: 2 });
-  await repo.add({ nome: "Baiano", especie: "Baianossauro", idade: 10 });
+  async function seedDinossauros() {
+    const dinos = [
+      { nome: "Rex", especie: "Tyranossaurus", idade: 5 },
+      { nome: "Blue", especie: "Velociraptor", idade: 2 },
+      { nome: "Baiano", especie: "Baianossauro", idade: 10 },
+    ];
+
+    for (const dino of dinos) {
+      const existente = await repo.findByname(dino.nome);
+      if (!existente) {
+        await repo.add(dino);
+      }
+    }
+  }
 
   await repoRecinto.add({
     nome: "Val verde",
