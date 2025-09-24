@@ -9,6 +9,6 @@ export default async function connectMongo() {
     console.log("MongoDB foi conetado ao projeto com sucesso !!");
   } catch (error) {
     console.error("Erro na conexão MongoDB:", error);
-    process.exit(1); // aqui, ecerramos o app se não conectar
+    process.exit(1);
   }
 }

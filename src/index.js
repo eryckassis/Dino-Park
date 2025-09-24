@@ -3,8 +3,8 @@ import connectMongo from "./controllers/mongo.js";
 import dinossauroRoutes from "./routes/dinossauro.js";
 import RecintoModel from "./models/Recinto.js";
 const repoRecinto = new RecintoRepository();
-import DinossauroRepository from "./respositories/DinossauroRepository.js";
-import RecintoRepository from "./respositories/RecintoRepository.js";
+import DinossauroRepository from "./repositories/DinossauroRepository.js";
+import RecintoRepository from "./repositories/RecintoRepository.js";
 
 const app = express();
 app.use(express.json());
