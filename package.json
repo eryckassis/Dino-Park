@@ -4,6 +4,7 @@
   },
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "fs-extra": "^11.3.0",
     "mongoose": "^8.18.1",

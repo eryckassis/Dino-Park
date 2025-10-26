@@ -8,5 +8,8 @@ class RecintoRepository {
   async list() {
     return await RecintoModel.find();
   }
+  async findByName(nome) {
+    return await RecintoModel.findOne({ nome });
+  }
 }
 export default RecintoRepository;
