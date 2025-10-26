@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
   },
   "type": "module",
   "dependencies": {
@@ -9,5 +11,10 @@
     "fs-extra": "^11.3.0",
     "mongoose": "^8.18.1",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0"
   }
 }
