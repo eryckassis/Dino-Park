@@ -7,8 +7,8 @@ const DinossauroSchema = new mongoose.Schema({
   recintoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Recinto",
-    default: null,
-  },
+    default: null
+  }
 });
 
 export default mongoose.model("Dinossauro", DinossauroSchema);

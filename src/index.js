@@ -13,7 +13,7 @@ app.use("/dinossauros", dinossauroRoutes);
 
 const repoRecinto = new RecintoRepository();
 
-(async () => {
+(async() => {
   await connectMongo();
   const repo = new DinossauroRepository();
 
@@ -26,7 +26,7 @@ const repoRecinto = new RecintoRepository();
     app.listen(PORT, () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
       console.log(`🌍 Ambiente: ${process.env.NODE_ENV || "development"}`);
-      console.log(`🌱 Seed habilitado: NÃO`);
+      console.log("🌱 Seed habilitado: NÃO");
     });
     return;
   }
@@ -42,7 +42,7 @@ const repoRecinto = new RecintoRepository();
   app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta ${PORT}`);
     console.log(`🌍 Ambiente: ${process.env.NODE_ENV || "development"}`);
-    console.log(`🌱 Seed habilitado: SIM`);
+    console.log("🌱 Seed habilitado: SIM");
   });
 
   async function seedDinossauros() {
@@ -51,7 +51,7 @@ const repoRecinto = new RecintoRepository();
     const dinos = [
       { nome: "Rex", especie: "Tyranossaurus", idade: 5 },
       { nome: "Blue", especie: "Velociraptor", idade: 2 },
-      { nome: "Baiano", especie: "Baianossauro", idade: 10 },
+      { nome: "Baiano", especie: "Baianossauro", idade: 10 }
     ];
 
     for (const dino of dinos) {
@@ -84,7 +84,7 @@ const repoRecinto = new RecintoRepository();
     const recintos = [
       { nome: "Val verde", tipo: "Carnivoro", capacidade: maxCapacidade },
       { nome: "Selva Negra", tipo: "Herbivoro", capacidade: maxCapacidade },
-      { nome: "Lituania", tipo: "Herbivoro", capacidade: maxCapacidade },
+      { nome: "Lituania", tipo: "Herbivoro", capacidade: maxCapacidade }
     ];
 
     for (const recintoData of recintos) {
@@ -135,7 +135,7 @@ const repoRecinto = new RecintoRepository();
         nome: "Baiano-Lituania",
         especie: "Baianossauro",
         idade: 10,
-        recinto: recinto._id,
+        recinto: recinto._id
       });
 
       console.log("🆕 Baiano alocado no recinto Lituania!");

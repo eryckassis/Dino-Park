@@ -8,7 +8,7 @@ export default async function connectMongo() {
     const dbUri = process.env.DB_URI || "mongodb://localhost:27017/dino-park";
     await mongoose.connect(dbUri);
 
-    console.log(`MongoDB conectado com sucesso!`);
+    console.log("MongoDB conectado com sucesso!");
     console.log(`Ambiente: ${process.env.NODE_ENV || "development"}`);
     console.log(`Banco: ${process.env.DB_NAME || "dino-park"}`);
   } catch (error) {
