@@ -1,13 +1,14 @@
 import js from "@eslint/js";
 import globals from "globals";
+import jestPlugin from "eslint-plugin-jest";
 
 export default [
   // 🔧 Configuração recomendada do ESLint
   js.configs.recommended,
 
-  // 📁 Configuração principal para arquivos JavaScript
+  // 📁 Configuração para arquivos de código
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ["src/**/*.js"],
 
     languageOptions: {
       ecmaVersion: "latest",
@@ -17,15 +18,9 @@ export default [
       },
     },
 
-    // 📏 Regras personalizadas para seu projeto
     rules: {
-      // Obriga ponto e vírgula
       semi: ["error", "always"],
-
-      // Aspas duplas
       quotes: ["error", "double"],
-
-      // Avisa sobre variáveis não usadas (não quebra)
       "no-unused-vars": [
         "warn",
         {
@@ -33,34 +28,43 @@ export default [
           varsIgnorePattern: "^_",
         },
       ],
-
-      // Permite console.log (útil em desenvolvimento)
       "no-console": "off",
-
-      // Sem vírgula no final de objetos/arrays
       "comma-dangle": ["error", "never"],
-
-      // Sem espaço antes de parênteses em funções
       "space-before-function-paren": ["error", "never"],
-
-      // Força uso de === ao invés de ==
       eqeqeq: ["error", "always"],
-
-      // Identação de 2 espaços
       indent: ["error", 2],
-
-      // No máximo 2 linhas em branco consecutivas
       "no-multiple-empty-lines": ["error", { max: 2 }],
-
-      // Espaço antes de chaves
       "space-before-blocks": ["error", "always"],
-
-      // Espaço ao redor de operadores
       "space-infix-ops": "error",
     },
   },
 
-  // 🚫 Arquivos e pastas para IGNORAR
+  // 🧪 Configuração específica para testes Jest
+  {
+    files: ["**/*.test.js", "**/*.spec.js", "tests/**/*.js", "unit/**/*.js"],
+
+    plugins: {
+      jest: jestPlugin,
+    },
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.jest, // Adiciona globals do Jest
+      },
+    },
+
+    rules: {
+      ...jestPlugin.configs.recommended.rules,
+      "jest/expect-expect": "warn",
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/valid-expect": "error",
+    },
+  },
+
+  // 🚫 Arquivos para IGNORAR
   {
     ignores: [
       "node_modules/**",
